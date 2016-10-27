@@ -1,0 +1,10 @@
+<span class="home">{{ fixture.homeTeamName }}</span>
+<span class="mid -time" *ngIf="fixture.status == 'SCHEDULED' || fixture.status == 'TIMED'">
+  <span class="date">{{ fixture.date | matchDate }}</span>
+  <span class="time">{{ fixture.date | matchTime }}</span>
+</span>
+<span class="mid" *ngIf="fixture.status == 'POSTPONED'">Postponed</span>
+<span class="mid" *ngIf="fixture.status == 'CANCELED'">Canceled</span>
+<span class="mid -result" *ngIf="fixture.status == 'IN_PLAY'">{{ fixture.result.goalsHomeTeam }} - {{ fixture.result.goalsAwayTeam }} !LIVE</span>
+<span class="mid -result" *ngIf="fixture.status == 'FINISHED'">{{ fixture.result.goalsHomeTeam }} - {{ fixture.result.goalsAwayTeam }}</span>
+<span class="away">{{ fixture.awayTeamName }}</span>

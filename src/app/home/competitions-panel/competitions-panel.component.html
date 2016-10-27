@@ -1,0 +1,13 @@
+<div class="competitions">
+  <a class="competition"
+     *ngFor="let competition of competitions$ | async"
+     [routerLink]="['/competition', competition.league]"
+     routerLinkActive="-active"
+  >
+    {{ getCompetitionName(competition.league) }}
+  </a>
+</div>
+<div class="footer">
+  <a href="https://github.com/Navix/ng2-football-api" target="_blank">GitHub</a> |
+  <a href="https://nvx.me" target="_blank">Sasha Novik</a>
+</div>

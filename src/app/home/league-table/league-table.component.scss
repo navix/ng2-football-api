@@ -1,0 +1,47 @@
+@import "../../_config.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  .head {
+    background: #e1e1e1;
+    display: flex;
+    flex-direction: row;
+    padding: 4px 0;
+  }
+  .row {
+    align-items: center;
+    background: #eeeeee;
+    border-bottom: 1px solid #cccccc;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    &:last-child {
+      border-bottom: 0;
+    }
+    &:hover {
+      background: $itemHover;
+    }
+  }
+  .position {
+    flex-shrink: 0;
+    text-align: center;
+    width: 40px;
+  }
+  .name {
+    flex-grow: 1;
+    font-size: 1rem;
+  }
+  .stat {
+    flex-shrink: 0;
+    text-align: center;
+    width: 50px;
+  }
+  .points {
+    flex-shrink: 0;
+    font-weight: 600;
+    text-align: center;
+    width: 50px;
+  }
+}

@@ -1,31 +1,34 @@
-# Ng2soccer
+# soccer.nvx.me
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.18.
+Simple application that uses [Angular 2](https://github.com/angular/angular), [Angular-CLI](https://github.com/angular/angular-cli), and [football-data.org API](http://api.football-data.org/docs/v1/index.html).
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+SCREEN HERE
 
-## Code scaffolding
+Demo: https://soccer.nvx.me
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+## Dev
 
-## Build
+Local: `ng serve` 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## ToDo
 
-## Running unit tests
+### Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- [x] Competition page
+- [ ] Match page
+- [ ] Team page
+- [ ] Refresh button
+- [ ] Timezone selection/detection
+- [ ] "Powered by API"
+- [ ] Players
+- [ ] Live updates
 
-## Running end-to-end tests
+### Dev
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+- [ ] Responsive
+- [ ] 404
+- [ ] Animations and loaders
+- [ ] Logos and photos
+- [ ] API Cache
 
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Bugfixes

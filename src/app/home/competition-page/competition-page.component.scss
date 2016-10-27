@@ -1,0 +1,63 @@
+@import "../../_config.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.caption {
+  background: $itemHover;
+  color: #000000;
+  padding: 32px;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.fixtures {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  .head {
+    background: #e5e5e5;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    justify-content: space-between;
+    .title {
+      padding: 16px;
+    }
+    .next, .prev {
+      background: #dedede;
+      cursor: pointer;
+      padding: 16px;
+      user-select: none;
+      &:hover {
+        background: $linkHover;
+        color: #ffffff;
+      }
+    }
+  }
+  .fixture {
+    flex-grow: 1;
+  }
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  .head {
+    background: #cbcbcb;
+    flex-shrink: 0;
+    padding: 16px;
+    text-align: center;
+  }
+  .standings {
+    flex-grow: 1;
+  }
+}

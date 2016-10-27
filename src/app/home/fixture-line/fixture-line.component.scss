@@ -1,0 +1,43 @@
+@import "../../_config.scss";
+
+:host {
+  align-items: center;
+  border-bottom: 1px solid #f3f3f3;
+  display: flex;
+  flex-direction: row;
+  padding: 0 16px;
+  &:last-child {
+    border-bottom: 0;
+  }
+  &:hover {
+    background: $itemHover;
+  }
+  .home {
+    flex-shrink: 0;
+    padding: 0 8px;
+    text-align: right;
+    width: 42%;
+  }
+  .mid {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    text-align: center;
+    width: 16%;
+    &.-time {
+      display: flex;
+      flex-direction: column;
+      .date {}
+      .time {
+        font-size: 1.1rem;
+      }
+    }
+    &.-result {
+      font-size: 1.2rem;
+    }
+  }
+  .away {
+    flex-shrink: 0;
+    padding: 0 8px;
+    width: 42%;
+  }
+}

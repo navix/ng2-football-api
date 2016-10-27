@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+html {
+  background: #ffffff;
+  color: #222222;
+  cursor: default;
+  font: 16px 'Montserrat', sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #464548;
+  text-decoration: none;
+}
+
+:selection {
+  background: #e90052; /* WebKit/Blink Browsers */
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: #e90052; /* Gecko Browsers */
+  color: #ffffff;
+}

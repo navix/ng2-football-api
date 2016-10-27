@@ -1,0 +1,39 @@
+@import "../../_config.scss";
+
+:host {
+  background: $darkBg;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .1);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  padding: 8px 0;
+  width: 250px;
+}
+
+.competitions {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.competition {
+  color: #ffffff;
+  padding: 8px 16px;
+  &.-active {
+    background: darken($darkBg, 4%);
+  }
+  &:hover {
+    background: $linkHover;
+    color: #ffffff;
+  }
+}
+
+.footer {
+  font-size: 0.8rem;
+  padding: 8px 16px;
+  text-align: center;
+  a {
+    color: $linkHover;
+  }
+}

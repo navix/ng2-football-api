@@ -1,7 +1,7 @@
 @import "../../_config.scss";
 
 :host {
-  background: $itemHover url("/assets/field.jpg") no-repeat center;
+  background: $itemHover url("./assets/field.jpg") no-repeat center;
   background-size: cover;
   flex-grow: 1;
   padding: 16px;

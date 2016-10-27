@@ -10,6 +10,13 @@ Demo: https://navix.github.io/ng2-football-api/
 
 Local: `ng serve` 
 
+## Deploy to GitHub
+
+* Switch to `gh-pages`
+* `ng build --prod`
+* Copy `/dist` files to root
+* Commit & push
+
 ## ToDo
 
 ### Features

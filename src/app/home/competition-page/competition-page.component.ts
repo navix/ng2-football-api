@@ -15,6 +15,7 @@ import { Table, TableStanding } from "../../core/models/table.model";
 export class CompetitionPageComponent implements OnInit {
 
   protected competition$ = new BehaviorSubject<Competition>(null);
+  protected fixtureHover$ = new BehaviorSubject<string[]>([]);
   protected fixtures$: Observable<Fixture[]>;
   protected league$: Observable<string>;
   protected table$: Observable<TableStanding[]>;
@@ -27,7 +28,7 @@ export class CompetitionPageComponent implements OnInit {
   ngOnInit() {
     // set league$
     this.league$ = this.route.params.map((params: Params) => params['league']);
-    // subscribe compitition$
+    // subscribe competition$
     this.league$.map(league => this.store.state.data.competitions.find(competition => competition.league == league)).subscribe(this.competition$);
     // subscribe tour$
     this.competition$.map(competition => competition.currentMatchday).subscribe(this.tour$);
@@ -39,9 +40,11 @@ export class CompetitionPageComponent implements OnInit {
         .map((data: {fixtures: Fixture[], tour: number}) => data.fixtures.filter(fixture => fixture.matchday == data.tour));
     // set table$
     this.table$ = this.competition$.map(competition => competition.table.standing);
-    this.table$.subscribe(table => {
-      console.log('table', table);
-    });
+  }
+
+  protected isFixtureHighlighted(fixture: Fixture): boolean {
+    let hovered = this.fixtureHover$.value;
+    return hovered.indexOf(fixture.homeTeamName) !== -1 || hovered.indexOf(fixture.awayTeamName) !== -1;
   }
 
   protected nextTour() {

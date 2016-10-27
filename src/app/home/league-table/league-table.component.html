@@ -8,7 +8,12 @@
   <div class="stat">GD</div>
   <div class="points">Points</div>
 </div>
-<div class="row" *ngFor="let row of table">
+<div
+    *ngFor="let row of table" class="row"
+    [class.-highlight]="isHighlighted(row.teamName)"
+    (mouseenter)="rowEnter(row.teamName)"
+    (mouseleave)="rowLeave()"
+>
   <div class="position">{{ row.position }}</div>
   <div class="name">{{ row.teamName }}</div>
   <div class="stat">{{ row.playedGames }}</div>

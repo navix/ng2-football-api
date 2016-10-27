@@ -6,10 +6,20 @@
       <div class="title">Tour {{ tour$ | async }}</div>
       <div class="next" (click)="nextTour()">Next</div>
     </div>
-    <home-fixture-line class="fixture" *ngFor="let fixture of fixtures$ | async" [fixture]="fixture"></home-fixture-line>
+    <home-fixture-line
+        class="fixture" [class.-highlight]="isFixtureHighlighted(fixture)"
+        *ngFor="let fixture of fixtures$ | async" [fixture]="fixture"
+        (mouseenter)="fixtureHover$.next([fixture.homeTeamName, fixture.awayTeamName])"
+        (mouseleave)="fixtureHover$.next([])"
+    >
+    </home-fixture-line>
   </div>
   <div class="table">
     <div class="head">Table</div>
-    <home-league-table class="standings" [table]="table$ | async"></home-league-table>
+    <home-league-table
+        class="standings" [table]="table$ | async"
+        [highlight]="fixtureHover$ | async"
+        (teamHover)="fixtureHover$.next($event)"
+    ></home-league-table>
   </div>
 </div>

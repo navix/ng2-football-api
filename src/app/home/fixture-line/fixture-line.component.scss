@@ -6,6 +6,10 @@
   display: flex;
   flex-direction: row;
   padding: 0 16px;
+  transition: background .2s;
+  &.-highlight {
+    background: #bbbbbb;
+  }
   &:last-child {
     border-bottom: 0;
   }

@@ -1,10 +1,10 @@
-# soccer.nvx.me
+# ng2-football-api
 
-Simple application that uses [Angular 2](https://github.com/angular/angular), [Angular-CLI](https://github.com/angular/angular-cli), and [football-data.org API](http://api.football-data.org/docs/v1/index.html).
+Simple [Angular 2](https://github.com/angular/angular) application using [Angular-CLI](https://github.com/angular/angular-cli) and [football-data.org API](http://api.football-data.org/docs/v1/index.html).
 
-SCREEN HERE
+![phpstorm-nvx-one](./src/assets/screenshot.png "ng2-football-api preview")
 
-Demo: https://soccer.nvx.me
+Demo: https://navix.github.io/ng2-football-api/
 
 ## Dev
 

@@ -4,22 +4,11 @@ Simple [Angular 2](https://github.com/angular/angular) application using [Angula
 
 ![phpstorm-nvx-one](./src/assets/screenshot.png "ng2-football-api preview")
 
-Demo: https://navix.github.io/ng2-football-api/
+Demo: https://football.nvx.me
 
 ## Dev
 
 Local: `ng serve` 
-
-## Deploy to GitHub
-
-* `ng github-pages:deploy --message "Optional commit message"`
-
-OR
-
-* `ng build --prod`
-* Copy `./dist` files to `gh-pages` branch root
-* Update `index.html`: `<base href="/ng2-football-api/">`
-* Commit & push `gh-pages` branch
 
 ## ToDo
 

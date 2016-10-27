@@ -12,10 +12,14 @@ Local: `ng serve`
 
 ## Deploy to GitHub
 
-* Switch to `gh-pages`
+* `ng github-pages:deploy --message "Optional commit message"`
+
+OR
+
 * `ng build --prod`
-* Copy `/dist` files to root
-* Commit & push
+* Copy `./dist` files to `gh-pages` branch root
+* Update `index.html`: `<base href="/ng2-football-api/">`
+* Commit & push `gh-pages` branch
 
 ## ToDo
 

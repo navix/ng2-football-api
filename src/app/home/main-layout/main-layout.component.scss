@@ -1,6 +1,12 @@
+@import "../../_config.scss";
+
 :host {
   background: #ffffff;
   display: flex;
   flex-direction: row;
   flex-grow: 1;
+}
+
+home-competitions-panel {
+  width: 250px;
 }

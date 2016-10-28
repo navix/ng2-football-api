@@ -1,6 +1,10 @@
 <h1 class="caption">{{ (competition$ | async).caption }}</h1>
+<div class="responsive-tabs">
+  <div class="tab" (click)="responsiveTab = '-fixtures'" [class.-active]="responsiveTab == '-fixtures'">Fixtures</div>
+  <div class="tab" (click)="responsiveTab = '-table'" [class.-active]="responsiveTab == '-table'">Table</div>
+</div>
 <div class="page">
-  <div class="fixtures">
+  <div class="fixtures" [class.-active]="responsiveTab == '-fixtures'">
     <div class="head">
       <div class="prev" (click)="prevTour()">Prev</div>
       <div class="title">Tour {{ tour$ | async }}</div>
@@ -14,7 +18,7 @@
     >
     </home-fixture-line>
   </div>
-  <div class="table">
+  <div class="table" [class.-active]="responsiveTab == '-table'">
     <div class="head">Table</div>
     <home-league-table
         class="standings" [table]="table$ | async"

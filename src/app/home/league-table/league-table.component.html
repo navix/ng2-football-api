@@ -2,9 +2,9 @@
   <div class="position">#</div>
   <div class="name"></div>
   <div class="stat">Played</div>
-  <div class="stat">Wins</div>
-  <div class="stat">Draws</div>
-  <div class="stat">Losses</div>
+  <div class="stat -wins">Wins</div>
+  <div class="stat -draws">Draws</div>
+  <div class="stat -losses">Losses</div>
   <div class="stat">GD</div>
   <div class="points">Points</div>
 </div>
@@ -17,9 +17,9 @@
   <div class="position">{{ row.position }}</div>
   <div class="name">{{ row.teamName }}</div>
   <div class="stat">{{ row.playedGames }}</div>
-  <div class="stat">{{ row.wins }}</div>
-  <div class="stat">{{ row.draws }}</div>
-  <div class="stat">{{ row.losses }}</div>
+  <div class="stat -wins">{{ row.wins }}</div>
+  <div class="stat -draws">{{ row.draws }}</div>
+  <div class="stat -losses">{{ row.losses }}</div>
   <div class="stat">{{ row.goalDifference > 0 ? '+' + row.goalDifference : row.goalDifference }}</div>
   <div class="points">{{ row.points }}</div>
 </div>

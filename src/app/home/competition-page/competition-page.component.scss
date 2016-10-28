@@ -9,7 +9,12 @@
 .caption {
   background: $itemHover;
   color: #000000;
+  overflow: hidden;
   padding: 32px;
+}
+
+.responsive-tabs {
+  display: none;
 }
 
 .page {
@@ -59,5 +64,60 @@
   }
   .standings {
     flex-grow: 1;
+  }
+}
+
+@media (max-width: $tabletWidth) {
+  .caption {
+    height: $responsiveHeadHeight;
+    font-size: 1.4rem;
+    line-height: $responsiveHeadHeight;
+    padding: 0 16px 0 $responsiveHeadHeight + 16px;
+  }
+  .responsive-tabs {
+    display: flex;
+    flex-direction: row;
+    .tab {
+      box-sizing: border-box;
+      cursor: pointer;
+      text-align: center;
+      padding: 16px;
+      width: 50%;
+    }
+    .tab.-active {
+      background: #eeeeee;
+    }
+  }
+  .page {
+    flex-direction: column;
+    /** @todo do it better */
+    > .-active {
+      display: flex;
+    }
+  }
+  .fixtures, .table {
+    display: none;
+    flex-grow: 1;
+    width: auto;
+  }
+}
+
+@media (max-width: $mobileWidth) {
+  .caption {
+    height: $responsiveHeadXsHeight;
+    font-size: 1rem;
+    line-height: $responsiveHeadXsHeight;
+    padding: 0 16px 0 $responsiveHeadXsHeight + 16px;
+  }
+  .responsive-tabs .tab {
+    padding: 8px;
+  }
+  .fixtures .head {
+    .title, .next, .prev {
+      padding: 8px;
+    }
+  }
+  .table .head {
+    padding: 8px;
   }
 }

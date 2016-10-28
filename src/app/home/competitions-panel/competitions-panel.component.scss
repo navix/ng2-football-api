@@ -8,7 +8,6 @@
   flex-direction: column;
   flex-shrink: 0;
   padding: 8px 0;
-  width: 250px;
 }
 
 .competitions {
@@ -36,5 +35,50 @@
   text-align: center;
   a {
     color: $linkHover;
+  }
+}
+
+.toggle {
+  display: none;
+}
+
+@media (max-width: $tabletWidth) {
+  :host {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform .2s;
+  }
+  :host(.-display-responsive) {
+    transform: translateX(0);
+    .toggle {
+      transform: translateY(-100%);
+    }
+  }
+  .toggle {
+    background: $darkBg;
+    box-sizing: border-box;
+    display: block;
+    height: $responsiveHeadHeight;
+    padding: 14px;
+    position: absolute;
+    right: -$responsiveHeadHeight;
+    top: 0;
+    transition: transform .2s;
+    width: $responsiveHeadHeight;
+    svg {
+      fill: #ffffff;
+    }
+  }
+}
+
+@media (max-width: $mobileWidth) {
+  .toggle {
+    height: $responsiveHeadXsHeight;
+    padding: 6px;
+    right: -$responsiveHeadXsHeight;
+    width: $responsiveHeadXsHeight;
   }
 }

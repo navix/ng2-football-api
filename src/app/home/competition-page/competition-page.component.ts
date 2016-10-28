@@ -22,6 +22,9 @@ export class CompetitionPageComponent implements OnInit, OnDestroy {
   protected table$ = new BehaviorSubject<TableStanding[]>([]);
   protected tour$ = new BehaviorSubject<number>(null);
 
+  // responsive
+  protected responsiveTab: string = '-fixtures';
+
   constructor(private route: ActivatedRoute,
               private store: StoreService) {
   }

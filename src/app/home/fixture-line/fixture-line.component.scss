@@ -5,8 +5,13 @@
   border-bottom: 1px solid #f3f3f3;
   display: flex;
   flex-direction: row;
+  font-size: 1rem;
   padding: 0 16px;
   transition: background .2s;
+  * {
+    /* @todo do it better */
+    box-sizing: border-box;
+  }
   &.-highlight {
     background: #bbbbbb;
   }
@@ -16,32 +21,57 @@
   &:hover {
     background: $itemHover;
   }
-  .home {
-    flex-shrink: 0;
-    padding: 0 8px;
-    text-align: right;
-    width: 42%;
-  }
-  .mid {
-    flex-shrink: 0;
-    font-size: 0.75rem;
-    text-align: center;
-    width: 16%;
-    &.-time {
-      display: flex;
-      flex-direction: column;
-      .date {}
-      .time {
-        font-size: 1.1rem;
-      }
+}
+
+.home {
+  flex-shrink: 0;
+  padding: 0 8px;
+  text-align: right;
+  width: 42%;
+}
+
+.mid {
+  flex-shrink: 0;
+  font-size: 0.75em;
+  text-align: center;
+  width: 16%;
+  &.-time {
+    display: flex;
+    flex-direction: column;
+    .date {
     }
-    &.-result {
-      font-size: 1.2rem;
+    .time {
+      font-size: 1.1em;
     }
   }
-  .away {
-    flex-shrink: 0;
-    padding: 0 8px;
-    width: 42%;
+  &.-result {
+    font-size: 1.2em;
+  }
+}
+
+.away {
+  flex-shrink: 0;
+  padding: 0 8px;
+  width: 42%;
+}
+
+@media (max-width: $mobileWidth) {
+  :host {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: $xsWidth) {
+  .home, .away {
+    font-size: 0.9em;
+    width: 35%;
+  }
+  .mid, .mid.-time {
+    align-items: center;
+    flex-direction: row;
+    width: 30%;
+    .time {
+      font-size: 1.3em;
+    }
   }
 }

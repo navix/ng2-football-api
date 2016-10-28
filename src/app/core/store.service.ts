@@ -78,11 +78,11 @@ export class StoreService {
    *
    * @param path
    * @param paths
-   * @return {Observable<R>}
+   * @return {Observable<any>}
    */
   select = (path: any, ...paths: string[]): Observable<any> => {
     return this.stream().pluck(...path.split('/'), ...paths).distinctUntilChanged();
-  }
+  };
 
   /**
    * Get Http Headers.
@@ -93,7 +93,7 @@ export class StoreService {
     let headers = new Headers();
     headers.append('X-Auth-Token', '37fd178a35ca427ab0a1d368cf7b9d86');
     return headers;
-  }
+  };
 
   /**
    * Get Http.Post Observable.
@@ -104,7 +104,7 @@ export class StoreService {
    */
   post = (url: string, data: any): Observable<any> => {
     return this.http.post(url, JSON.stringify(data), {headers: this.getHeaders()}).map(res => res.json());
-  }
+  };
 
   /**
    * Get Http.Get Observable.
@@ -114,7 +114,7 @@ export class StoreService {
    */
   get = (url: string): Observable<any> => {
     return this.http.get(url, {headers: this.getHeaders()}).map(res => res.json());
-  }
+  };
 
   /**
    * Get Http.Delete Observable.
@@ -124,7 +124,7 @@ export class StoreService {
    */
   delete = (url: string): Observable<any> => {
     return this.http.delete(url, {headers: this.getHeaders()}).map(res => res.json());
-  }
+  };
 
   /**
    * @param item

@@ -14,12 +14,12 @@ export class FetchFixturesResolver implements Resolve<boolean> {
           state: RouterStateSnapshot): Observable<boolean> {
     return new Observable<boolean>(observer => {
       let competition = this.store.state.data.competitions.find(competition => competition.league == route.params['league']);
-      if (competition.fixtures) {
+      if (competition.fixtures.length > 0) {
         observer.next(true);
         observer.complete();
       }
       else {
-        this.store.data.fetchFixtures(competition.id).subscribe(state => {
+        this.store.data.fetchFixtures(competition.id, competition.currentMatchday).subscribe(state => {
           observer.next(true);
           observer.complete();
         });

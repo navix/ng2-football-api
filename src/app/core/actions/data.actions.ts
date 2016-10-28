@@ -22,7 +22,7 @@ export class DataActions {
       };
       return state;
     });
-  }
+  };
 
   // #################
   // #### ACTIONS ####
@@ -42,24 +42,26 @@ export class DataActions {
             observer.error('Invalid response!');
           });
     })
-  }
+  };
 
-  fetchFixtures = (competitionId: number): Observable<StoreState> => {
-    return new Observable<StoreState>((observer: Observer<StoreState>) => {
+  fetchFixtures = (competitionId: number, matchday: number): Observable<number> => {
+    return new Observable<number>((observer: Observer<number>) => {
       this.store
-          .get(`https://api.football-data.org/v1/competitions/${competitionId}/fixtures`)
+          .get(`https://api.football-data.org/v1/competitions/${competitionId}/fixtures?matchday=${matchday}`)
           .subscribe((data: any) => {
             if (data && data.fixtures) {
-              console.log('fixtrs', data);
-              this.$$setFixtures(competitionId, data.fixtures);
-              observer.next(this.store.state);
+              this.$$setFixtures(competitionId, data.fixtures.map(fixture => {
+                fixture.id = fixture._links.self.href.split('/').pop();
+                return fixture;
+              }));
+              observer.next(data.fixtures.length);
               observer.complete();
               return;
             }
             observer.error('Invalid response!');
           });
     })
-  }
+  };
 
   fetchTable = (competitionId: number): Observable<StoreState> => {
     return new Observable<StoreState>((observer: Observer<StoreState>) => {
@@ -67,7 +69,6 @@ export class DataActions {
           .get(`https://api.football-data.org/v1/competitions/${competitionId}/leagueTable`)
           .subscribe((data: any) => {
             if (data) {
-              console.log('tabl', data);
               this.$$setTable(competitionId, data);
               observer.next(this.store.state);
               observer.complete();
@@ -76,7 +77,7 @@ export class DataActions {
             observer.error('Invalid response!');
           });
     })
-  }
+  };
 
 
   // #####################
@@ -85,18 +86,20 @@ export class DataActions {
 
   $$setCompetitions = (competitions: Competition[]) => {
     this.store.dispatch(state => {
-      state.data.competitions = StoreService.__copyCollection(competitions);
+      state.data.competitions = StoreService.__copyCollection(competitions.map(competition => Object.assign(new Competition(), competition)));
       return state;
     });
-  }
+  };
 
   $$setFixtures = (competitionId: number, fixtures: Fixture[]) => {
     this.store.dispatch(state => {
-      let competition = StoreService.__setObjectField(state.data.competitions.find(competition => competition.id == competitionId), 'fixtures', fixtures);
-      state.data.competitions = StoreService.__setCollectionItem(state.data.competitions, competition);
+      let currentCompetition = state.data.competitions.find(competition => competition.id == competitionId);
+      let newFixtures = StoreService.__mergeCollections(currentCompetition.fixtures, fixtures);
+      let newCompetition = StoreService.__setObjectField(currentCompetition, 'fixtures', newFixtures);
+      state.data.competitions = StoreService.__setCollectionItem(state.data.competitions, newCompetition);
       return state;
     });
-  }
+  };
 
   $$setTable = (competitionId: number, table: Table) => {
     this.store.dispatch(state => {

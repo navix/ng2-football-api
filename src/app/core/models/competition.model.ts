@@ -3,18 +3,18 @@ import { Table } from "./table.model";
 
 export class Competition {
 
-  id: number;
-  caption: string;
-  league: string;
-  year: string;
-  currentMatchday: number;
-  numberOfMatchdays: number;
-  numberOfTeams: number;
-  numberOfGames: number;
-  lastUpdated: Date;
+  id: number = null;
+  caption: string = null;
+  league: string = null;
+  year: string = null;
+  currentMatchday: number = null;
+  numberOfMatchdays: number = null;
+  numberOfTeams: number = null;
+  numberOfGames: number = null;
+  lastUpdated: Date = null;
 
-  fixtures: Fixture[];
-  table: Table;
+  fixtures: Fixture[] = [];
+  table: Table = null;
 
   static getName(league: string) {
     let names = {

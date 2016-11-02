@@ -2,6 +2,7 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreService } from "./store.service";
 import { DataActions } from "./actions/data.actions";
+import { ResponsiveService } from "./responsive.service";
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { DataActions } from "./actions/data.actions";
   declarations: [],
   providers: [
     StoreService,
+    ResponsiveService,
     DataActions,
   ],
 })

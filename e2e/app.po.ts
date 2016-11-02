@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class Ng2soccerPage {
+export class Ng2FootballApiPage {
   navigateTo() {
     return browser.get('/');
   }

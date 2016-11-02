@@ -1,6 +1,7 @@
 @import "../../_config.scss";
 
 :host {
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -26,6 +27,7 @@
 .fixtures {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   width: 50%;
   .head {
     background: #e5e5e5;
@@ -47,8 +49,13 @@
       }
     }
   }
-  .fixture {
+  .lines {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
+    .fixture {
+      flex-grow: 1;
+    }
   }
 }
 

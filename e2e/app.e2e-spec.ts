@@ -1,10 +1,10 @@
-import { Ng2soccerPage } from './app.po';
+import { Ng2FootballApiPage } from './app.po';
 
-describe('ng2soccer App', function() {
-  let page: Ng2soccerPage;
+describe('ng2-football-api App', function() {
+  let page: Ng2FootballApiPage;
 
   beforeEach(() => {
-    page = new Ng2soccerPage();
+    page = new Ng2FootballApiPage();
   });
 
   it('should display message saying app works', () => {
